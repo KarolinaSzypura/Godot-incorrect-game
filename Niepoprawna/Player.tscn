@@ -1,0 +1,72 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://gracz/gracz_lewo2.png" type="Texture" id=2]
+[ext_resource path="res://gracz/gracz_lewo3.png" type="Texture" id=3]
+[ext_resource path="res://gracz/gracz_lewo1.png" type="Texture" id=4]
+[ext_resource path="res://gracz/gracz_lewo4.png" type="Texture" id=5]
+[ext_resource path="res://gracz/gracz_lewo5.png" type="Texture" id=6]
+[ext_resource path="res://gracz/gracz_lewo_skok0.png" type="Texture" id=7]
+[ext_resource path="res://gracz/gracz_lewo_skok.png" type="Texture" id=8]
+[ext_resource path="res://gracz/gracz_prawo_skok0.png" type="Texture" id=9]
+[ext_resource path="res://gracz/gracz_prawo_skok.png" type="Texture" id=10]
+[ext_resource path="res://gracz/gracz_prawo2.png" type="Texture" id=11]
+[ext_resource path="res://gracz/gracz_prawo3.png" type="Texture" id=12]
+[ext_resource path="res://gracz/gracz_prawo1.png" type="Texture" id=13]
+[ext_resource path="res://gracz/gracz_prawo4.png" type="Texture" id=14]
+[ext_resource path="res://gracz/gracz_prawo5.png" type="Texture" id=15]
+[ext_resource path="res://gracz/gracz_stoi.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idzie_lewo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "skok_lewo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "skok_prawo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idzie_prawo",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "stoi",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.75427
+height = 3.95023
+
+[node name="Player" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="PlayerAnimation" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "stoi"
+playing = true
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 0.407837, 0.611725 )
+shape = SubResource( 2 )
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2( 0, -10 )
+scale = Vector2( 3.13581, 1.30563 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="pozycja strzału" type="Node2D" parent="."]
+position = Vector2( -20, 2 )

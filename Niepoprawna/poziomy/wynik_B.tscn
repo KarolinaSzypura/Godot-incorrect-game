@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://poziomy/wynik_A.gd" type="Script" id=1]
+[ext_resource path="res://MENU/B.png" type="Texture" id=2]
+[ext_resource path="res://menu_script.gd" type="Script" id=3]
+
+[node name="wynik_B" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 47.8332
+margin_top = 26.3083
+margin_right = 584.833
+margin_bottom = 235.308
+rect_scale = Vector2( 1.71401, 2.6 )
+custom_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_right = 537.0
+margin_bottom = 129.0
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 159.0
+margin_right = 537.0
+margin_bottom = 209.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="retry" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+text = "Powtórz"
+script = ExtResource( 3 )
+scene_to_load = "res://poziomy/Poziom1.tscn"
+
+[node name="next" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 30.0
+margin_right = 116.0
+margin_bottom = 50.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+text = "Następny poziom"
+script = ExtResource( 3 )
+scene_to_load = "res://poziomy/Poziom2.tscn"

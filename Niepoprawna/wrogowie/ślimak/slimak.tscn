@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Small_enemy.gd" type="Script" id=1]
+[ext_resource path="res://wrogowie/ślimak/idzie 1.png" type="Texture" id=2]
+[ext_resource path="res://wrogowie/ślimak/idzie 2.png" type="Texture" id=3]
+[ext_resource path="res://wrogowie/ślimak/wywrotka.png" type="Texture" id=4]
+[ext_resource path="res://wrogowie/ślimak/do gory nogami.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.065, 4.39592 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idzie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "wywrotka",
+"speed": 6.0
+} ]
+
+[node name="slimak" type="KinematicBody2D"]
+position = Vector2( 850.301, 184.523 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idzie"
+
+[node name="RayCast_floor" type="RayCast2D" parent="."]
+position = Vector2( -8, 0 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="RayCast_enemy" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -11, 0 )
+
+[node name="czas_smierci" type="Timer" parent="."]
+wait_time = 3.0

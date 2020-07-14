@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://wrogowie/boss/Boss.gd" type="Script" id=1]
+[ext_resource path="res://wrogowie/boss/boss.png" type="Texture" id=2]
+[ext_resource path="res://wrogowie/boss/wywrotka.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 172.302
+height = 49.5229
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idzie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "wywrotka",
+"speed": 5.0
+} ]
+
+[node name="Boss" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.10803 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idzie"
+
+[node name="RayCast_floor" type="RayCast2D" parent="."]
+position = Vector2( -150, 0 )
+enabled = true
+cast_to = Vector2( 0, 250 )
+
+[node name="RayCast_enemy" type="RayCast2D" parent="."]
+position = Vector2( 0, 95.1841 )
+scale = Vector2( 1, 50 )
+enabled = true
+cast_to = Vector2( -200, 0 )
+
+[node name="czas_smierci" type="Timer" parent="."]

@@ -1,0 +1,16 @@
+[gd_scene format=2]
+
+[node name="punkty" type="CanvasLayer"]
+editor/display_folded = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+margin_left = 940.0
+margin_top = 15.0
+margin_right = 1000.0
+margin_bottom = 50.0
+tab_size = 24
+scroll_active = false

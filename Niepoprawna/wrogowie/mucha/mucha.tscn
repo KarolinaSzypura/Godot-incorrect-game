@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Small_enemy.gd" type="Script" id=1]
+[ext_resource path="res://wrogowie/mucha/lata.png" type="Texture" id=2]
+[ext_resource path="res://wrogowie/mucha/leci 1.png" type="Texture" id=3]
+[ext_resource path="res://wrogowie/mucha/wywrotka.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.78204
+height = 7.93472
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idzie",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "wywrotka",
+"speed": 5.0
+} ]
+
+[node name="mucha" type="KinematicBody2D"]
+position = Vector2( -26.908, -14.1499 )
+script = ExtResource( 1 )
+lata = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.463928, -0.34795 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idzie"
+
+[node name="RayCast_floor" type="RayCast2D" parent="."]
+position = Vector2( -6.81117, -0.51405 )
+enabled = true
+
+[node name="RayCast_enemy" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -11, 0 )
+
+[node name="czas_smierci" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="RayCast_lot" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="RayCast_lot2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 45 )

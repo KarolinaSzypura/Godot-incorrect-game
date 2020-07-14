@@ -1,0 +1,194 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://plansza/piasek.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://życie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://zbieractwo/złota moneta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://zbieractwo/czerwona moneta.tscn" type="PackedScene" id=5]
+[ext_resource path="res://zbieractwo/zielona moneta.tscn" type="PackedScene" id=6]
+[ext_resource path="res://wrogowie/ślimak/slimak.tscn" type="PackedScene" id=7]
+[ext_resource path="res://wrogowie/mucha/mucha.tscn" type="PackedScene" id=8]
+[ext_resource path="res://wrogowie/boss/Boss.tscn" type="PackedScene" id=9]
+[ext_resource path="res://koniec gry.tscn" type="PackedScene" id=10]
+
+[node name="Poziom 1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 21, 21 )
+cell_quadrant_size = 21
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 0, 536870924, 0, 65536, 536870924, 0, 65637, 12, 0, 131072, 536870924, 0, 131121, 9, 0, 131122, 10, 0, 131123, 10, 0, 131124, 10, 0, 131125, 10, 0, 131126, 10, 0, 131127, 10, 0, 131128, 10, 0, 131173, 12, 0, 196608, 536870924, 0, 196621, 536870922, 0, 196622, 536870922, 0, 196623, 536870922, 0, 196624, 536870922, 0, 196625, 536870922, 0, 196637, 10, 0, 196638, 10, 0, 196639, 10, 0, 196640, 10, 0, 196641, 10, 0, 196642, 10, 0, 196656, 9, 0, 196657, 13, 0, 196709, 12, 0, 262144, 536870924, 0, 262191, 9, 0, 262192, 13, 0, 262245, 12, 0, 327680, 536870924, 0, 327694, 9, 0, 327695, 536870920, 0, 327699, 11, 0, 327700, 7, 0, 327701, 7, 0, 327702, 7, 0, 327703, 7, 0, 327704, 7, 0, 327705, 7, 0, 327706, 536870923, 0, 327721, 7, 0, 327722, 7, 0, 327723, 7, 0, 327724, 7, 0, 327725, 7, 0, 327726, 7, 0, 327727, 13, 0, 327739, 10, 0, 327740, 10, 0, 327741, 10, 0, 327742, 10, 0, 327743, 10, 0, 327781, 12, 0, 393216, 536870924, 0, 393217, 536870919, 0, 393218, 536870919, 0, 393229, 9, 0, 393230, 13, 0, 393251, 7, 0, 393252, 7, 0, 393253, 7, 0, 393254, 7, 0, 393255, 7, 0, 393256, 7, 0, 393316, 9, 0, 393317, 12, 0, 458752, 536870924, 0, 458757, 11, 0, 458758, 536870923, 0, 458759, 10, 0, 458760, 536870922, 0, 458761, 536870922, 0, 458762, 536870922, 0, 458763, 536870922, 0, 458764, 536870922, 0, 458765, 13, 0, 458766, 12, 0, 458783, 7, 0, 458784, 7, 0, 458785, 7, 0, 458786, 7, 0, 458804, 10, 0, 458805, 10, 0, 458806, 10, 0, 458807, 10, 0, 458808, 10, 0, 458851, 9, 0, 458852, 13, 0, 458853, 12, 0, 524288, 536870924, 0, 524314, 9, 0, 524315, 7, 0, 524316, 7, 0, 524317, 7, 0, 524318, 7, 0, 524386, 9, 0, 524387, 13, 0, 524388, 12, 0, 524389, 12, 0, 589824, 536870924, 0, 589849, 9, 0, 589850, 13, 0, 589921, 9, 0, 589922, 13, 0, 589923, 12, 0, 589924, 12, 0, 589925, 12, 0, 655360, 536870924, 0, 655361, 536870919, 0, 655362, 536870919, 0, 655363, 536870919, 0, 655384, 9, 0, 655385, 13, 0, 655417, 10, 0, 655418, 10, 0, 655419, 10, 0, 655420, 10, 0, 655421, 10, 0, 655456, 9, 0, 655457, 13, 0, 655458, 12, 0, 655459, 12, 0, 655460, 12, 0, 655461, 12, 0, 720896, 536870924, 0, 720919, 9, 0, 720920, 13, 0, 720991, 9, 0, 720992, 13, 0, 720993, 12, 0, 720994, 12, 0, 720995, 12, 0, 720996, 12, 0, 720997, 12, 0, 786432, 536870924, 0, 786454, 9, 0, 786455, 13, 0, 786495, 11, 0, 786496, 7, 0, 786497, 7, 0, 786498, 7, 0, 786499, 7, 0, 786500, 536870921, 0, 786510, 11, 0, 786511, 7, 0, 786512, 7, 0, 786513, 7, 0, 786514, 7, 0, 786515, 7, 0, 786516, 7, 0, 786517, 7, 0, 786518, 7, 0, 786519, 7, 0, 786520, 7, 0, 786521, 7, 0, 786522, 7, 0, 786523, 7, 0, 786526, 9, 0, 786527, 13, 0, 786528, 12, 0, 786529, 12, 0, 786530, 12, 0, 786531, 12, 0, 786532, 12, 0, 786533, 12, 0, 851968, 536870924, 0, 851972, 536870919, 0, 851973, 536870919, 0, 851974, 536870919, 0, 851975, 536870921, 0, 851977, 11, 0, 851978, 536870923, 0, 851986, 11, 0, 851987, 536870923, 0, 851989, 9, 0, 851990, 13, 0, 852036, 536870925, 0, 852037, 536870921, 0, 852061, 9, 0, 852062, 13, 0, 852063, 12, 0, 852064, 12, 0, 852065, 12, 0, 852066, 12, 0, 852067, 12, 0, 852068, 12, 0, 852069, 12, 0, 917504, 536870924, 0, 917511, 536870925, 0, 917512, 536870922, 0, 917513, 536870922, 0, 917514, 536870922, 0, 917515, 536870922, 0, 917516, 536870922, 0, 917517, 10, 0, 917518, 10, 0, 917519, 10, 0, 917520, 10, 0, 917521, 10, 0, 917522, 10, 0, 917523, 10, 0, 917524, 536870922, 0, 917525, 13, 0, 917573, 536870925, 0, 917574, 536870921, 0, 917596, 9, 0, 917597, 13, 0, 917598, 12, 0, 917599, 12, 0, 917600, 12, 0, 917601, 12, 0, 917602, 12, 0, 917603, 12, 0, 917604, 12, 0, 917605, 12, 0, 983040, 536870924, 0, 983041, 536870919, 0, 983110, 536870925, 0, 983111, 7, 0, 983131, 7, 0, 983132, 13, 0, 983133, 12, 0, 983134, 12, 0, 983135, 12, 0, 983136, 12, 0, 983137, 12, 0, 983138, 12, 0, 983139, 12, 0, 983140, 12, 0, 983141, 12, 0, 1048576, 536870924, 0, 1048577, 536870924, 0, 1048578, 536870919, 0, 1048648, 7, 0, 1048649, 7, 0, 1048650, 7, 0, 1048651, 7, 0, 1048652, 7, 0, 1048653, 7, 0, 1048654, 7, 0, 1048655, 7, 0, 1048656, 7, 0, 1048657, 7, 0, 1048658, 7, 0, 1048659, 7, 0, 1048660, 7, 0, 1048661, 7, 0, 1048662, 7, 0, 1048663, 7, 0, 1048664, 7, 0, 1048665, 7, 0, 1048666, 7, 0, 1048667, 12, 0, 1048668, 12, 0, 1048669, 12, 0, 1048670, 12, 0, 1048671, 12, 0, 1048672, 12, 0, 1048673, 12, 0, 1048674, 12, 0, 1048675, 12, 0, 1048676, 12, 0, 1048677, 12, 0, 1114112, 536870924, 0, 1114113, 536870924, 0, 1114114, 536870924, 0, 1114115, 7, 0, 1114213, 12, 0, 1179652, 7, 0, 1179653, 7, 0, 1179654, 7, 0, 1179655, 7, 0, 1179656, 7, 0, 1179657, 7, 0, 1179658, 536870919, 0, 1179659, 536870919, 0, 1179660, 536870919, 0, 1179661, 536870919, 0, 1179662, 536870919, 0, 1179663, 536870919, 0, 1179664, 536870919, 0, 1179665, 536870919, 0, 1179666, 536870919, 0, 1179667, 536870919, 0, 1179668, 536870919, 0, 1179669, 536870919, 0, 1179670, 536870919, 0, 1179749, 12, 0, 1245207, 7, 0, 1245208, 7, 0, 1245209, 7, 0, 1245210, 7, 0, 1245211, 7, 0, 1245212, 7, 0, 1245213, 7, 0, 1245214, 7, 0, 1245215, 7, 0, 1245216, 7, 0, 1245217, 7, 0, 1245218, 7, 0, 1245219, 7, 0, 1245220, 7, 0, 1245221, 7, 0, 1245222, 7, 0, 1245223, 7, 0, 1245224, 7, 0, 1245225, 7, 0, 1245226, 7, 0, 1245227, 7, 0, 1245228, 7, 0, 1245229, 7, 0, 1245230, 7, 0, 1245285, 12, 0, 1310767, 7, 0, 1310821, 12, 0, 1376304, 7, 0, 1376357, 12, 0, 1441841, 7, 0, 1441893, 12, 0, 1507378, 7, 0, 1507379, 7, 0, 1507380, 7, 0, 1507381, 7, 0, 1507382, 7, 0, 1507383, 7, 0, 1507384, 7, 0, 1507385, 7, 0, 1507386, 7, 0, 1507387, 7, 0, 1507388, 7, 0, 1507429, 12, 0, 1572925, 7, 0, 1572965, 12, 0, 1638462, 7, 0, 1638463, 7, 0, 1638464, 7, 0, 1638465, 7, 0, 1638466, 7, 0, 1638467, 7, 0, 1638468, 7, 0, 1638469, 7, 0, 1638470, 7, 0, 1638471, 7, 0, 1638472, 7, 0, 1638473, 7, 0, 1638474, 7, 0, 1638475, 7, 0, 1638476, 7, 0, 1638477, 7, 0, 1638478, 7, 0, 1638479, 7, 0, 1638480, 7, 0, 1638481, 7, 0, 1638482, 7, 0, 1638483, 7, 0, 1638484, 7, 0, 1638485, 7, 0, 1638486, 7, 0, 1638487, 7, 0, 1638488, 7, 0, 1638489, 7, 0, 1638490, 7, 0, 1638491, 7, 0, 1638492, 7, 0, 1638493, 7, 0, 1638494, 7, 0, 1638495, 7, 0, 1638496, 7, 0, 1638497, 7, 0, 1638498, 7, 0, 1638499, 7, 0, 1638500, 7, 0, 1638501, 12, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1719.31, 240.725 )
+
+[node name="życie" parent="." instance=ExtResource( 3 )]
+
+[node name="pozycja startowa" type="Node2D" parent="."]
+position = Vector2( 1719.31, 240.725 )
+
+[node name="zbieractwo" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 209.944, 3.49905 )
+
+[node name="złota moneta" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1574.74, 234.902 )
+
+[node name="czerwona" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 1635.31, 235.212 )
+
+[node name="zielona" parent="zbieractwo" instance=ExtResource( 6 )]
+position = Vector2( 1703.16, 236.151 )
+
+[node name="złota moneta2" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1200.99, 234.465 )
+
+[node name="złota moneta3" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 997.282, 194.293 )
+
+[node name="złota moneta4" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1050.11, 193.538 )
+
+[node name="złota moneta5" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1107.85, 225.236 )
+
+[node name="czerwona2" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 875.773, -3.06393 )
+
+[node name="czerwona3" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 953.131, -3.06393 )
+
+[node name="zielona2" parent="zbieractwo" instance=ExtResource( 6 )]
+position = Vector2( 936.15, 120.464 )
+
+[node name="zielona4" parent="zbieractwo" instance=ExtResource( 6 )]
+position = Vector2( 640.33, 109.332 )
+
+[node name="zielona5" parent="zbieractwo" instance=ExtResource( 6 )]
+position = Vector2( 513.85, 131.57 )
+
+[node name="złota moneta6" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 413.058, 46.5016 )
+
+[node name="złota moneta7" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 435.833, 46.0384 )
+
+[node name="złota moneta8" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 462.915, 45.4237 )
+
+[node name="złota moneta9" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 518.058, 45.5016 )
+
+[node name="zielona6" parent="zbieractwo" instance=ExtResource( 6 )]
+position = Vector2( -2.6792, 129.698 )
+
+[node name="czerwona4" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 189.916, 59.1291 )
+
+[node name="złota moneta10" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 490.526, 45.2722 )
+
+[node name="czerwona5" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( -175.987, 189.408 )
+
+[node name="czerwona6" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 1090.16, 69.7082 )
+
+[node name="złota moneta11" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1192.69, 506.476 )
+
+[node name="złota moneta12" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1306.27, 506.945 )
+
+[node name="złota moneta13" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1425.94, 506.945 )
+
+[node name="złota moneta14" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1544.5, 509.161 )
+
+[node name="złota moneta15" parent="zbieractwo" instance=ExtResource( 4 )]
+position = Vector2( 1644.23, 509.161 )
+
+[node name="czerwona7" parent="zbieractwo" instance=ExtResource( 5 )]
+position = Vector2( 169.365, 242.601 )
+
+[node name="punkty" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Control" type="Control" parent="punkty"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="punkty/Control"]
+margin_left = 940.0
+margin_top = 15.0
+margin_right = 1000.0
+margin_bottom = 50.0
+tab_size = 24
+scroll_active = false
+
+[node name="wrogowie" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="slimak2" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 1294.71, 100.149 )
+
+[node name="slimak" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 1889.11, 334.799 )
+
+[node name="slimak3" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 1112.07, 141.508 )
+
+[node name="slimak4" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 513.457, 391.726 )
+
+[node name="slimak5" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 778.722, 393.998 )
+
+[node name="slimak6" parent="wrogowie" instance=ExtResource( 7 )]
+position = Vector2( 341.529, 288.178 )
+
+[node name="mucha" parent="wrogowie" instance=ExtResource( 8 )]
+position = Vector2( 348.17, 23.9306 )
+
+[node name="Boss" parent="wrogowie" instance=ExtResource( 9 )]
+position = Vector2( 343.153, 343.321 )
+scale = Vector2( 0.18, 0.17 )
+
+[node name="mucha2" parent="wrogowie" instance=ExtResource( 8 )]
+position = Vector2( 1242.61, 395.723 )
+scale = Vector2( 2, 2 )
+
+[node name="koniec gry" parent="." instance=ExtResource( 10 )]
+position = Vector2( 44.2569, 108.917 )
+script = null
+[connection signal="body_entered" from="zbieractwo/złota moneta" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/zielona" to="Player" method="_on_zielona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta2" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta3" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta4" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta5" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona2" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona3" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/zielona2" to="Player" method="_on_zielona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/zielona4" to="Player" method="_on_zielona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/zielona5" to="Player" method="_on_zielona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta6" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta7" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta8" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta9" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/zielona6" to="Player" method="_on_zielona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona4" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta10" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona5" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona6" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta11" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta12" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta13" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta14" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/złota moneta15" to="Player" method="_on_zota_moneta_body_entered"]
+[connection signal="body_entered" from="zbieractwo/czerwona7" to="Player" method="_on_czerwona_body_entered"]
+[connection signal="body_entered" from="koniec gry" to="Player" method="_on_koniec_gry_body_entered"]

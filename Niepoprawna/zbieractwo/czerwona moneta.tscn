@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://złota moneta.gd" type="Script" id=1]
+[ext_resource path="res://zbieractwo/obrazy/czerwona moneta.png" type="Texture" id=2]
+
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 5.89391
+
+[node name="czerwona" type="Area2D"]
+editor/display_folded = true
+position = Vector2( 35.9852, -65.0259 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_zota_moneta_body_entered"]
